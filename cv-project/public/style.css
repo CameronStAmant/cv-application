@@ -5,3 +5,11 @@
 .results {
   display: none;
 }
+
+.form {
+  display: inline;
+}
+
+.displayActualResults {
+  display: none;
+}

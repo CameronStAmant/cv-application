@@ -1,4 +1,5 @@
 import React from 'react';
+import DisplayGeneral from './DisplayGeneral';
 
 export default class General extends React.Component {
   constructor() {
@@ -20,7 +21,7 @@ export default class General extends React.Component {
     return (
       <div>
         <h3>General Information</h3>
-        <form id="general">
+        <form id="general" className="form">
           <label>Name: </label>
           <input
             type="text"
@@ -53,6 +54,11 @@ export default class General extends React.Component {
           <p className="results">{this.state.phoneNumber}</p>
           <br />
         </form>
+        <DisplayGeneral
+          name={this.state.name}
+          email={this.state.email}
+          phoneNumber={this.state.phoneNumber}
+        />
       </div>
     );
   }

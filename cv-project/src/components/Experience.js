@@ -1,4 +1,5 @@
 import React from 'react';
+import DisplayExperience from './DisplayExperience';
 
 export default class Experience extends React.Component {
   constructor() {
@@ -21,17 +22,21 @@ export default class Experience extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const hideInput = document.getElementsByClassName('input');
-    const showResults = document.getElementsByClassName('results');
+    const hideForms = document.getElementsByClassName('form');
+    const displayActualResults = document.getElementsByClassName(
+      'displayActualResults'
+    );
+    // const showResults = document.getElementsByClassName('results');
     if (this.state.status === 'Submit') {
-      for (let i = 0; i < hideInput.length; i++) {
-        hideInput[i].style.display = 'none';
-        showResults[i].style.display = 'inline';
+      for (let i = 0; i < hideForms.length; i++) {
+        hideForms[i].style.display = 'none';
+        displayActualResults[i].style.display = 'inline';
       }
+
       this.setState({ status: 'Edit' });
     } else {
       for (let i = 0; i < hideInput.length; i++) {
         hideInput[i].style.display = 'inline';
-        showResults[i].style.display = 'none';
       }
       this.setState({ status: 'Submit' });
     }
@@ -41,7 +46,7 @@ export default class Experience extends React.Component {
     return (
       <div>
         <h3>Experience</h3>
-        <form id="general" onSubmit={this.handleSubmit}>
+        <form id="general" className="form" onSubmit={this.handleSubmit}>
           <label>Company: </label>
           <input
             type="text"
@@ -85,6 +90,12 @@ export default class Experience extends React.Component {
           <br />
           <input type="submit" id="submit" value={this.state.status} />
         </form>
+        <DisplayExperience
+          company={this.state.company}
+          position={this.state.position}
+          mainTasks={this.state.mainTasks}
+          dates={this.state.dates}
+        />
       </div>
     );
   }

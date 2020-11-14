@@ -1,4 +1,5 @@
 import React from 'react';
+import DisplayEducation from './DisplayEducation';
 
 export default class Education extends React.Component {
   constructor() {
@@ -20,8 +21,8 @@ export default class Education extends React.Component {
     return (
       <div>
         <h3>School Information</h3>
-        <form id="general">
-          <label>School Name: </label>
+        <form id="general" className="form">
+          <label>School: </label>
           <input
             type="text"
             name="schoolName"
@@ -52,6 +53,11 @@ export default class Education extends React.Component {
           <p className="results">{this.state.dates}</p>
           <br />
         </form>
+        <DisplayEducation
+          schoolName={this.state.schoolName}
+          field={this.state.field}
+          dates={this.state.dates}
+        />
       </div>
     );
   }
