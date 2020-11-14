@@ -5,6 +5,7 @@ import Experience from './components/Experience';
 function App() {
   return (
     <div>
+      <h1>CV Application</h1>
       <General />
       <Education />
       <Experience />

@@ -82,6 +82,7 @@ export default class Experience extends React.Component {
           />
           <p className="results">{this.state.dates}</p>
           <br />
+          <br />
           <input type="submit" id="submit" value={this.state.status} />
         </form>
       </div>
