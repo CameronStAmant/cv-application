@@ -1,0 +1,19 @@
+.input {
+  display: inline;
+}
+
+.results {
+  display: none;
+}
+
+.form {
+  display: inline;
+}
+
+.displayActualResults {
+  display: none;
+}
+
+#edit {
+  display: none;
+}
