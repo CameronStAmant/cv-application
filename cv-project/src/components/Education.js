@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default class General extends React.Component {
+export default class Education extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      email: '',
-      phoneNumber: '',
+      schoolName: '',
+      field: '',
+      dates: '',
       status: 'Submit',
     };
     this.handleChange = this.handleChange.bind(this);
@@ -19,37 +19,37 @@ export default class General extends React.Component {
   render() {
     return (
       <div>
-        <h3>General Information</h3>
+        <h3>School Information</h3>
         <form id="general">
-          <label>Name: </label>
+          <label>School Name: </label>
           <input
             type="text"
-            name="name"
-            value={this.state.name}
+            name="schoolName"
+            value={this.state.schoolName}
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.name}</p>
+          <p className="results">{this.state.schoolName}</p>
           <br />
-          <label>Email: </label>
+          <label>Field: </label>
           <input
             type="text"
-            name="email"
-            value={this.state.email}
+            name="field"
+            value={this.state.field}
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.email}</p>
+          <p className="results">{this.state.field}</p>
           <br />
-          <label>Phone Number: </label>
+          <label>Dates: </label>
           <input
             type="text"
-            name="phoneNumber"
-            value={this.state.phoneNumber}
+            name="dates"
+            value={this.state.dates}
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.phoneNumber}</p>
+          <p className="results">{this.state.dates}</p>
           <br />
         </form>
       </div>
