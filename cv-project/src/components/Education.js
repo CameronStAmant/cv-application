@@ -30,7 +30,6 @@ export default class Education extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.schoolName}</p>
           <br />
           <label>Field: </label>
           <input
@@ -40,7 +39,6 @@ export default class Education extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.field}</p>
           <br />
           <label>Dates: </label>
           <input
@@ -50,7 +48,6 @@ export default class Education extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.dates}</p>
           <br />
         </form>
         <DisplayEducation

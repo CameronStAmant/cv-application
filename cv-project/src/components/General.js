@@ -31,7 +31,6 @@ export default class General extends React.Component {
             className="input"
           />
           <span class="error"></span>
-          <p className="results">{this.state.name}</p>
           <br />
           <label>Email: </label>
           <input
@@ -41,7 +40,6 @@ export default class General extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.email}</p>
           <br />
           <label>Phone Number: </label>
           <input
@@ -51,7 +49,6 @@ export default class General extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.phoneNumber}</p>
           <br />
         </form>
         <DisplayGeneral

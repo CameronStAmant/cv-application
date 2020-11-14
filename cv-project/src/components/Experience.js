@@ -21,7 +21,6 @@ export default class Experience extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const hideInput = document.getElementsByClassName('input');
     const hideForms = document.getElementsByClassName('form');
     const displayActualResults = document.getElementsByClassName(
       'displayActualResults'
@@ -57,7 +56,6 @@ export default class Experience extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.company}</p>
           <br />
           <label>Position: </label>
           <input
@@ -67,7 +65,6 @@ export default class Experience extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.position}</p>
           <br />
           <label>Main Tasks: </label>
           <input
@@ -77,7 +74,6 @@ export default class Experience extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.mainTasks}</p>
           <br />
           <label>Dates: </label>
           <input
@@ -87,7 +83,6 @@ export default class Experience extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <p className="results">{this.state.dates}</p>
           <br />
           <br />
           <input type="submit" id="submit" value={this.state.status} />
