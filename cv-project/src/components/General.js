@@ -7,7 +7,7 @@ export default class General extends React.Component {
       name: '',
       email: '',
     };
-
+    const hideInput = document.getElementsByClassName('input');
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -17,7 +17,7 @@ export default class General extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(`${this.state.name} && ${this.state.email}`);
+    this.hideInput.style.display = 'none';
   }
 
   render() {
@@ -30,7 +30,9 @@ export default class General extends React.Component {
             name="name"
             value={this.state.name}
             onChange={this.handleChange}
+            class="input"
           />
+          <p>{this.state.name}</p>
           <br />
           <label>Email: </label>
           <input
@@ -38,6 +40,7 @@ export default class General extends React.Component {
             name="email"
             value={this.state.email}
             onChange={this.handleChange}
+            class="input"
           />
           <input type="submit" />
         </form>
