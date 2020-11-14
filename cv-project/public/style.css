@@ -13,3 +13,7 @@
 .displayActualResults {
   display: none;
 }
+
+#edit {
+  display: none;
+}

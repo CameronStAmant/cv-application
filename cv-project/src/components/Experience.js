@@ -26,18 +26,20 @@ export default class Experience extends React.Component {
     const displayActualResults = document.getElementsByClassName(
       'displayActualResults'
     );
-    // const showResults = document.getElementsByClassName('results');
+    const displayEditButton = document.getElementById('edit');
     if (this.state.status === 'Submit') {
       for (let i = 0; i < hideForms.length; i++) {
         hideForms[i].style.display = 'none';
         displayActualResults[i].style.display = 'inline';
       }
-
+      displayEditButton.style.display = 'inline';
       this.setState({ status: 'Edit' });
     } else {
-      for (let i = 0; i < hideInput.length; i++) {
-        hideInput[i].style.display = 'inline';
+      for (let i = 0; i < hideForms.length; i++) {
+        displayActualResults[i].style.display = 'none';
+        hideForms[i].style.display = 'inline';
       }
+      displayEditButton.style.display = 'none';
       this.setState({ status: 'Submit' });
     }
   }
@@ -96,6 +98,10 @@ export default class Experience extends React.Component {
           mainTasks={this.state.mainTasks}
           dates={this.state.dates}
         />
+        <br />
+        <button value="Edit" id="edit" onClick={this.handleSubmit}>
+          Edit
+        </button>
       </div>
     );
   }
