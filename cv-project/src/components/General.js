@@ -30,7 +30,6 @@ export default class General extends React.Component {
             onChange={this.handleChange}
             className="input"
           />
-          <span class="error"></span>
           <br />
           <label>Email: </label>
           <input
