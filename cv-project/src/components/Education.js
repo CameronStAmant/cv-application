@@ -1,61 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DisplayEducation from './DisplayEducation';
 
-export default class Education extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      schoolName: '',
-      field: '',
-      dates: '',
-      status: 'Submit',
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+export default function Education() {
+  const [schoolName, setSchoolName] = useState('');
+  const [field, setField] = useState('');
+  const [dates, setDates] = useState('');
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+  const schoolNameHandler = (schoolName) => {
+    setSchoolName(schoolName.target.value);
+  };
 
-  render() {
-    return (
-      <div>
-        <h3>School Information</h3>
-        <form id="general" className="form">
-          <label>School: </label>
-          <input
-            type="text"
-            name="schoolName"
-            value={this.state.schoolName}
-            onChange={this.handleChange}
-            className="input"
-          />
-          <br />
-          <label>Field: </label>
-          <input
-            type="text"
-            name="field"
-            value={this.state.field}
-            onChange={this.handleChange}
-            className="input"
-          />
-          <br />
-          <label>Dates: </label>
-          <input
-            type="text"
-            name="dates"
-            value={this.state.dates}
-            onChange={this.handleChange}
-            className="input"
-          />
-          <br />
-        </form>
-        <DisplayEducation
-          schoolName={this.state.schoolName}
-          field={this.state.field}
-          dates={this.state.dates}
+  const fieldHandler = (field) => {
+    setField(field.target.value);
+  };
+
+  const datesHandler = (dates) => {
+    setDates(dates.target.value);
+  };
+
+  return (
+    <div>
+      <h3>School Information</h3>
+      <form id="general" className="form">
+        <label>School: </label>
+        <input
+          type="text"
+          name="schoolName"
+          value={schoolName}
+          onChange={schoolNameHandler}
+          className="input"
         />
-      </div>
-    );
-  }
+        <br />
+        <label>Field: </label>
+        <input
+          type="text"
+          name="field"
+          value={field}
+          onChange={fieldHandler}
+          className="input"
+        />
+        <br />
+        <label>Dates: </label>
+        <input
+          type="text"
+          name="dates"
+          value={dates}
+          onChange={datesHandler}
+          className="input"
+        />
+        <br />
+      </form>
+      <DisplayEducation schoolName={schoolName} field={field} dates={dates} />
+    </div>
+  );
 }

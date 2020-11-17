@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default class DisplayGeneral extends React.Component {
-  render() {
-    return (
-      <div className="displayActualResults">
-        <span>Name: {this.props.name}</span>
-        <br />
-        <span>Email: {this.props.email}</span>
-        <br />
-        <span>Phone Number: {this.props.phoneNumber}</span>
-      </div>
-    );
-  }
+export default function DisplayGeneral(props) {
+  const [name, setName] = useState(props.name);
+  const [email, setEmail] = useState(props.email);
+  const [phoneNumber, setPhoneNumber] = useState(props.phoneNumber);
+
+  useEffect(() => {
+    setName(props.name);
+  }, [props.name]);
+
+  useEffect(() => {
+    setEmail(props.email);
+  }, [props.email]);
+
+  useEffect(() => {
+    setPhoneNumber(props.phoneNumber);
+  }, [props.phoneNumber]);
+
+  return (
+    <div className="displayActualResults">
+      <span>Name: {name}</span>
+      <br />
+      <span>Email: {email}</span>
+      <br />
+      <span>Phone Number: {phoneNumber}</span>
+    </div>
+  );
 }

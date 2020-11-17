@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default class DisplayEducation extends React.Component {
-  render() {
-    return (
-      <div className="displayActualResults">
-        <span>School: {this.props.schoolName}</span>
-        <br />
-        <span>Field: {this.props.field}</span>
-        <br />
-        <span>Dates: {this.props.dates}</span>
-        <br />
-      </div>
-    );
-  }
+export default function DisplayEducation(props) {
+  const [schoolName, setSchoolName] = useState(props.schoolName);
+  const [field, setField] = useState(props.field);
+  const [dates, setDates] = useState(props.dates);
+
+  useEffect(() => {
+    setSchoolName(props.schoolName);
+  }, [props.schoolName]);
+
+  useEffect(() => {
+    setField(props.field);
+  }, [props.field]);
+
+  useEffect(() => {
+    setDates(props.dates);
+  }, [props.dates]);
+
+  return (
+    <div className="displayActualResults">
+      <span>School: {schoolName}</span>
+      <br />
+      <span>Field: {field}</span>
+      <br />
+      <span>Dates: {dates}</span>
+      <br />
+    </div>
+  );
 }
