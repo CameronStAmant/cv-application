@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles/style.css"],"names":[],"mappings":"AAIA,aACE,cACF,CAMA,4BACE,YACF","file":"main.a9d9bc7c.chunk.css","sourcesContent":[".input {\n  display: inline;\n}\n\n.form {\n  display: inline;\n}\n\n.displayActualResults {\n  display: none;\n}\n\n#edit {\n  display: none;\n}\n"]}
